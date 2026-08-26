@@ -19,6 +19,6 @@ Il form (`#iscrizioneForm`) prova prima a mandare i dati al tuo Google Apps Scri
 7. In `index.html`, cerca `GOOGLE_SCRIPT_URL` (vicino a fine file) e sostituisci `'PASTE_YOUR_APPS_SCRIPT_URL_HERE'` con l'URL appena copiato.
 8. Fai commit e push: Vercel farà il redeploy automatico.
 
-Ogni iscrizione da quel momento: finisce come riga nel Sheet **e** manda una email di notifica a `forghieri.giulia@gmail.com` e `iori.andrea.ai@gmail.com` (modifica l'array `destinatari` in `google-apps-script.gs` se vuoi cambiare i destinatari).
+Ogni iscrizione da quel momento: finisce come riga nel Sheet **e** manda una email di notifica a `forghieri.giulia@gmail.com` (modifica la variabile `destinatario` in `google-apps-script.gs` se vuoi cambiare o aggiungere destinatari).
 
 Se in futuro modifichi lo script, ripeti il passaggio "Nuova distribuzione" (o gestisci le versioni da **Distribuisci > Gestisci distribuzioni**) — l'URL resta lo stesso solo se aggiorni la distribuzione esistente invece di crearne una nuova.
