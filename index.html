@@ -434,7 +434,7 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
         <h1>ChatGPT per tutti<span class="dot">.</span><br>Il corso in presenza a Correggio.</h1>
         <p class="lead">Impara a usarlo per ottenere risultati veri e diventare più produttivo, eliminando le attività più ripetitive. Decine di casi reali, zero competenze tecniche richieste.</p>
         <div class="btn-row">
-          <a class="btn" href="#iscrizione">Lascia i tuoi contatti →</a>
+          <a class="btn" href="#iscrizione">Iscriviti →</a>
         </div>
         <div class="hero-info-list">
           <a class="hero-info-row" href="#dove">
@@ -558,7 +558,7 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
       </div>
     </div>
     <div style="text-align:center;margin-top:32px;">
-      <a class="btn" href="#iscrizione">Lascia i tuoi contatti</a>
+      <a class="btn" href="#iscrizione">Iscriviti</a>
     </div>
   </div>
 </section>
@@ -695,22 +695,27 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
           <h3>Prenota il tuo posto</h3>
           <p class="apply-subtitle">Lasciaci nome e telefono: è la parte più importante. Ti richiamiamo subito per confermare.</p>
           <div class="apply-panel">
-            <form action="https://formsubmit.co/forghieri.giulia@gmail.com" method="POST">
+            <form id="iscrizioneForm" action="https://formsubmit.co/forghieri.giulia@gmail.com" method="POST">
               <input type="hidden" name="_subject" value="Nuova iscrizione, ChatGPT per tutti (Onda AI Academy)">
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_captcha" value="false">
               <div class="form-row">
                 <div class="form-field">
                   <span class="form-label">Nome e cognome</span>
-                  <input type="text" name="Nome" placeholder="Mario Rossi" required="">
+                  <input type="text" id="nomeInput" name="Nome" placeholder="Mario Rossi" required="">
                 </div>
                 <div class="form-field">
                   <span class="form-label">Telefono</span>
-                  <input type="tel" name="Telefono" placeholder="333 1234567" required="">
+                  <input type="tel" id="telefonoInput" name="Telefono" placeholder="333 1234567" required="">
                 </div>
               </div>
               <button type="submit" class="btn">Richiedi il posto →</button>
             </form>
+            <div id="iscrizioneGrazie" style="display:none; text-align:center; padding: 12px 0;">
+              <div style="font-size:32px; margin-bottom:10px;">✅</div>
+              <strong style="display:block; color:var(--ink); font-size:16px; margin-bottom:6px;">Richiesta ricevuta!</strong>
+              <p style="font-size:13.5px; color:var(--body);">Ti richiamiamo entro 24h per confermare il posto.</p>
+            </div>
             <div class="apply-trust-row">
               <span class="apply-trust-item">🔒 Dati protetti</span>
               <span class="apply-trust-item">📞 Richiamo entro 24h</span>
@@ -806,7 +811,7 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
   <div class="wrap">
     <h2>Due serate. Un metodo che ti resta.</h2>
     <p>Posti limitati per garantire che ogni caso venga seguito da vicino.</p>
-    <a class="btn" href="#iscrizione">Lascia i tuoi contatti</a>
+    <a class="btn" href="#iscrizione">Iscriviti</a>
   </div>
 </section>
 
@@ -816,6 +821,42 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
   <p style="margin-top:8px;">Il corso "ChatGPT per tutti" non è affiliato a OpenAI.</p>
 </footer>
 
+<script>
+  // Incolla qui l'URL del tuo Google Apps Script Web App (vedi README.md)
+  const GOOGLE_SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
 
+  const iscrizioneForm = document.getElementById('iscrizioneForm');
+  iscrizioneForm.addEventListener('submit', function (e) {
+    const nome = document.getElementById('nomeInput').value;
+    const telefono = document.getElementById('telefonoInput').value;
+
+    if (GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') === 0) {
+      console.warn('GOOGLE_SCRIPT_URL non configurato — vedi README.md. Il form continua verso FormSubmit.');
+      return; // lascia che il form vada al fallback FormSubmit
+    }
+
+    e.preventDefault();
+    const body = new URLSearchParams({
+      nome: nome,
+      telefono: telefono,
+      source: 'landing',
+      page: location.pathname
+    }).toString();
+
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(GOOGLE_SCRIPT_URL, new Blob([body], { type: 'application/x-www-form-urlencoded' }));
+    } else {
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body
+      }).catch(() => {});
+    }
+
+    iscrizioneForm.style.display = 'none';
+    document.getElementById('iscrizioneGrazie').style.display = 'block';
+  });
+</script>
 
 </body></html>
