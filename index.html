@@ -306,6 +306,17 @@ a.hero-info-row:hover .location-row { background: var(--purple-bg); }
   font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;
 }
 
+.referral-banner {
+  display: flex; align-items: center; gap: 16px; text-align: left;
+  background: linear-gradient(135deg, var(--purple-bg) 0%, #fff 100%);
+  border: 1.5px solid rgba(148,83,255,0.3); border-radius: 14px;
+  padding: 18px 22px; margin-bottom: 32px;
+}
+.referral-icon { font-size: 28px; flex: none; }
+.referral-title { font-weight: 700; color: var(--ink); font-size: 15px; margin-bottom: 3px; }
+.referral-text { font-size: 13.5px; color: var(--body); line-height: 1.5; }
+@media (max-width: 720px) { .referral-banner { flex-direction: column; text-align: center; } }
+
 .apply-section { max-width: 640px; margin: 0 auto; text-align: center; }
 .apply-eyebrow {
   display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-mono); font-size: 11px;
@@ -690,6 +701,14 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
           <span><span class="price-check">✓</span>30 min di consulenza gratuita 1:1</span>
         </div>
 
+        <div class="referral-banner">
+          <div class="referral-icon">🤝</div>
+          <div>
+            <div class="referral-title">Vieni con un amico o una collega</div>
+            <div class="referral-text">Iscrivetevi insieme e risparmiate 20€ a testa sul prezzo di lancio. Basta dirlo quando vi richiamiamo per confermare.</div>
+          </div>
+        </div>
+
         <div class="apply-section">
           <div class="apply-eyebrow">→ Ultimo passo</div>
           <h3>Prenota il tuo posto</h3>
@@ -819,6 +838,7 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
   <p>Onda AI Academy<span class="dot">.</span> · Correggio, ottobre 2026</p>
   <p style="margin-top:14px;">Hai domande? Scrivi a <a href="mailto:forghieri.giulia@gmail.com" style="color:var(--purple);">forghieri.giulia@gmail.com</a></p>
   <p style="margin-top:8px;">Il corso "ChatGPT per tutti" non è affiliato a OpenAI.</p>
+  <p style="margin-top:8px;">P.IVA 03032600359</p>
 </footer>
 
 <script>
