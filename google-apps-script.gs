@@ -11,6 +11,7 @@ function doPost(e) {
     data.telefono || '',
     data.email || '',
     data.azienda || '',
+    data.variante || '',
     data.source || '',
     data.page || ''
   ]);
@@ -22,6 +23,7 @@ function doPost(e) {
     'Telefono: ' + (data.telefono || '-') + '\n' +
     'Email: ' + (data.email || '-') + '\n' +
     'Azienda: ' + (data.azienda || '-') + '\n' +
+    'Arrivato da: ' + (data.variante || '-') + '\n' +
     'Data: ' + new Date().toLocaleString('it-IT') + '\n\n' +
     'Richiama entro 24h per confermare il posto.';
 
