@@ -9,6 +9,8 @@ function doPost(e) {
     new Date(),
     data.nome || '',
     data.telefono || '',
+    data.email || '',
+    data.azienda || '',
     data.source || '',
     data.page || ''
   ]);
@@ -18,6 +20,8 @@ function doPost(e) {
   var corpo = 'Nuova richiesta di iscrizione al corso "ChatGPT per tutti":\n\n' +
     'Nome: ' + (data.nome || '-') + '\n' +
     'Telefono: ' + (data.telefono || '-') + '\n' +
+    'Email: ' + (data.email || '-') + '\n' +
+    'Azienda: ' + (data.azienda || '-') + '\n' +
     'Data: ' + new Date().toLocaleString('it-IT') + '\n\n' +
     'Richiama entro 24h per confermare il posto.';
 

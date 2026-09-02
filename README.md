@@ -11,7 +11,7 @@ Il form (`#iscrizioneForm`) prova prima a mandare i dati al tuo Google Apps Scri
 ### Collega Google Sheet + email
 
 1. Crea un nuovo Google Sheet (es. "Iscrizioni ChatGPT per tutti").
-2. Nella prima riga metti le intestazioni: `Data | Nome | Telefono | Source | Pagina`.
+2. Nella prima riga metti le intestazioni: `Data | Nome | Telefono | Email | Azienda | Source | Pagina`.
 3. Vai su **Estensioni > Apps Script**, cancella il contenuto di default e incolla il contenuto di `google-apps-script.gs` (in questa cartella).
 4. In alto a destra, **Distribuisci > Nuova distribuzione**. Tipo: **App web**. Esegui come: **me**. Chi ha accesso: **Chiunque**.
 5. Autorizza i permessi richiesti (accesso al foglio e invio email dal tuo account Gmail).
