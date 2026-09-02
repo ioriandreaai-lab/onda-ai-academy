@@ -22,3 +22,20 @@ Il form (`#iscrizioneForm`) prova prima a mandare i dati al tuo Google Apps Scri
 Ogni iscrizione da quel momento: finisce come riga nel Sheet **e** manda una email di notifica a `forghieri.giulia@gmail.com` (modifica la variabile `destinatario` in `google-apps-script.gs` se vuoi cambiare o aggiungere destinatari).
 
 Se in futuro modifichi lo script, ripeti il passaggio "Nuova distribuzione" (o gestisci le versioni da **Distribuisci > Gestisci distribuzioni**) — l'URL resta lo stesso solo se aggiorni la distribuzione esistente invece di crearne una nuova.
+
+## Landing verticali
+
+Sei percorsi, un file solo. `vercel.json` riscrive ogni percorso su `index.html`, e lo script in fondo alla pagina sostituisce titolo, sottotitolo, esempio della chat, testo del bottone e ordine dei profili in "Per chi è pensato" in base a `location.pathname`.
+
+| Percorso | Angolo |
+|---|---|
+| `/` | default, traffico organico e messaggi diretti |
+| `/titolari` | titolari e artigiani, gancio sul preventivo |
+| `/donne` | imprenditrici e professioniste |
+| `/ci-ho-provato` | chi ha provato ChatGPT e ha mollato |
+| `/dati-aziendali` | chi già lo usa al lavoro, gancio sui dati |
+| `/tempo` | trasversale, variante di controllo del test |
+
+I testi stanno nell'oggetto `VARIANTI` in fondo a `index.html`. Per aggiungere una landing: una voce nell'oggetto e un rewrite in `vercel.json`. La variante viene passata al Google Sheet nel campo `variante`, così ogni contatto porta con sé l'angolo da cui è arrivato.
+
+Nota per chi installa il banner cookie: il blocco preventivo va applicato una volta sola qui, e vale per tutti e sei i percorsi.

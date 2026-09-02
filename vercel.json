@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/titolari", "destination": "/index.html" },
+    { "source": "/donne", "destination": "/index.html" },
+    { "source": "/ci-ho-provato", "destination": "/index.html" },
+    { "source": "/dati-aziendali", "destination": "/index.html" },
+    { "source": "/tempo", "destination": "/index.html" }
+  ]
+}

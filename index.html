@@ -4,6 +4,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ChatGPT per tutti, il corso in presenza · Onda AI Academy</title>
+<meta name="description" content="Due serate dal vivo a Correggio, il 14 e 21 ottobre, per imparare a usare ChatGPT sul tuo lavoro. Massimo 20 posti, zero competenze tecniche richieste.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Onda AI Academy">
+<meta property="og:title" content="ChatGPT per tutti, il corso in presenza · Onda AI Academy">
+<meta property="og:description" content="Due serate dal vivo a Correggio, il 14 e 21 ottobre, per imparare a usare ChatGPT sul tuo lavoro. Massimo 20 posti, zero competenze tecniche richieste.">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -443,10 +449,10 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
     <div class="hero-grid">
       <div>
         <span class="tag">Corso in presenza · Due serate</span>
-        <h1>ChatGPT per tutti<span class="dot">.</span><br>Il corso in presenza a Correggio.</h1>
-        <p class="lead">Impara a usarlo per ottenere risultati veri e diventare più produttivo, eliminando le attività più ripetitive. Decine di casi reali, zero competenze tecniche richieste.</p>
+        <h1 id="heroTitle">ChatGPT per tutti<span class="dot">.</span><br>Il corso in presenza a Correggio.</h1>
+        <p class="lead" id="heroLead">Impara a usarlo per ottenere risultati veri e diventare più produttivo, eliminando le attività più ripetitive. Decine di casi reali, zero competenze tecniche richieste.</p>
         <div class="btn-row">
-          <a class="btn" href="#iscrizione">Iscriviti →</a>
+          <a class="btn" id="heroCta" href="#iscrizione">Iscriviti →</a>
         </div>
         <div class="hero-info-list">
           <a class="hero-info-row" href="#dove">
@@ -472,9 +478,9 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
             <div class="chat-mock-brand"><span class="chat-mock-brand-icon">✦</span>ChatGPT</div>
           </div>
           <div class="chat-mock-body">
-            <div class="chat-bubble user">Scrivimi un post per lanciare il nuovo prodotto</div>
-            <div class="chat-bubble before"><span class="label">Come lo usi oggi</span>"Scopri il nostro nuovo prodotto, disponibile ora!"</div>
-            <div class="chat-bubble after"><span class="label">Come lo userai dopo il corso</span>Un post costruito sul tuo tono di voce, il cliente tipo e l'obiettivo reale del lancio.</div>
+            <div class="chat-bubble user" id="chatUser">Scrivimi un post per lanciare il nuovo prodotto</div>
+            <div class="chat-bubble before"><span class="label">Come lo usi oggi</span><span id="chatBefore">"Scopri il nostro nuovo prodotto, disponibile ora!"</span></div>
+            <div class="chat-bubble after"><span class="label">Come lo userai dopo il corso</span><span id="chatAfter">Un post costruito sul tuo tono di voce, il cliente tipo e l'obiettivo reale del lancio.</span></div>
           </div>
         </div>
       </div>
@@ -617,33 +623,33 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
 </section>
 
 <!-- PER CHI -->
-<section class="section">
+<section class="section" id="secPerChi">
   <div class="wrap">
     <span class="tag">Per chi è pensato</span>
     <h2>Zero competenze tecniche richieste.</h2>
     <p class="intro">Il corso è pensato per imprenditori e chi lavora in una PMI, con qualsiasi livello di partenza.</p>
-    <div class="audience-list">
-      <div class="audience-row">
+    <div class="audience-list" id="audienceList">
+      <div class="audience-row" data-aud="titolari">
         <div class="audience-icon">💼</div>
         <div><h3>Imprenditori e titolari</h3><p>Vuoi sapere dove l'AI fa davvero la differenza nella tua azienda? Due serate per capirlo sul tuo caso vero, non in teoria.</p></div>
       </div>
-      <div class="audience-row">
+      <div class="audience-row" data-aud="team">
         <div class="audience-icon">🏢</div>
         <div><h3>Chi gestisce un team</h3><p>Cerchi un metodo condiviso da portare in azienda? Esci con qualcosa che il tuo team può riapplicare da subito.</p></div>
       </div>
-      <div class="audience-row">
+      <div class="audience-row" data-aud="prof">
         <div class="audience-icon">✍️</div>
         <div><h3>Professionisti e freelance</h3><p>Scrivi email, preventivi, contenuti ogni giorno? Risparmi ore ogni settimana, se sai come chiederglielo.</p></div>
       </div>
-      <div class="audience-row">
+      <div class="audience-row" data-aud="ammin">
         <div class="audience-icon">📊</div>
         <div><h3>Amministrazione e commerciale</h3><p>Report, preventivi, comunicazioni ai clienti: li costruisci più in fretta, con meno rilettura e correzioni.</p></div>
       </div>
-      <div class="audience-row">
+      <div class="audience-row" data-aud="marketing">
         <div class="audience-icon">📣</div>
         <div><h3>Marketing e comunicazione</h3><p>Un metodo per produrre più contenuti restando nel tuo tono di voce, non in quello generico dell'AI.</p></div>
       </div>
-      <div class="audience-row">
+      <div class="audience-row" data-aud="provato">
         <div class="audience-icon">🔰</div>
         <div><h3>Chi ha già provato e mollato</h3><p>Hai ricevuto una risposta generica e non l'hai più riaperto? Si riparte esattamente da lì.</p></div>
       </div>
@@ -652,7 +658,7 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
 </section>
 
 <!-- CHI SONO -->
-<section class="section off">
+<section class="section off" id="secChiSono">
   <div class="wrap">
     <div class="about-card">
     <div class="about">
@@ -853,6 +859,122 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
 </footer>
 
 <script>
+  // ---------------------------------------------------------------
+  // LANDING VERTICALI
+  // Un file solo, sei percorsi. I rewrite stanno in vercel.json.
+  // Per aggiungerne una: nuova voce qui + nuovo rewrite in vercel.json.
+  // ---------------------------------------------------------------
+  const VARIANTI = {
+    '/': null, // testi di default, già in pagina
+
+    '/titolari': {
+      title: 'ChatGPT per titolari e artigiani · Onda AI Academy',
+      desc: 'Il preventivo che ti prende due ore, fatto in sei minuti. Due serate a Correggio, il 14 e 21 ottobre, sul caso vero della tua azienda.',
+      h1: 'Il preventivo che ti prende due ore<span class="dot">.</span><br>Facciamolo in sei minuti.',
+      lead: 'Due serate a Correggio per far scrivere a ChatGPT le offerte, le mail ai clienti e i documenti che oggi rifai ogni volta da capo. Sul tuo caso vero, non su esempi finti. Zero competenze tecniche.',
+      cta: 'Voglio il posto →',
+      chat: {
+        user: 'Scrivimi il preventivo per la fornitura al cliente Rossi',
+        before: '"Gentile cliente, in allegato il preventivo richiesto. Cordiali saluti."',
+        after: 'Un preventivo con le tue condizioni di pagamento, i tuoi tempi di consegna e il tuo modo di scrivere.'
+      },
+      aud: ['titolari', 'team', 'ammin', 'prof', 'marketing', 'provato']
+    },
+
+    '/donne': {
+      title: 'ChatGPT per imprenditrici e professioniste · Onda AI Academy',
+      desc: 'Due serate a Correggio per chi ha troppe cose da fare e nessuno a cui delegarle. Si parte da zero, senza dare niente per scontato.',
+      h1: 'Troppe cose da fare<span class="dot">.</span><br>E nessuno a cui delegarle.',
+      lead: 'Due serate a Correggio per imprenditrici, professioniste e responsabili. Si parte da zero senza dare niente per scontato, e si esce con un metodo che riapplichi da sola sul tuo lavoro. Massimo 20 posti.',
+      cta: 'Voglio esserci →',
+      chat: {
+        user: 'Devo preparare la relazione mensile e non ho tempo',
+        before: '"Ecco una struttura generica per una relazione mensile: 1. Introduzione, 2. Dati..."',
+        after: 'La tua relazione già scritta sui numeri di questo mese, nel tuo modo di scrivere. Cinque minuti.'
+      },
+      aud: ['prof', 'marketing', 'provato', 'titolari', 'team', 'ammin'],
+      chiSonoInAlto: true
+    },
+
+    '/ci-ho-provato': {
+      title: 'Hai provato ChatGPT e ti ha deluso · Onda AI Academy',
+      desc: 'Quasi tutti si fermano alla prima risposta generica. Due serate a Correggio per capire cosa mancava alla tua richiesta, non allo strumento.',
+      h1: 'Hai provato ChatGPT e ti ha deluso<span class="dot">.</span><br>Ripartiamo esattamente da lì.',
+      lead: 'Quasi tutti si fermano alla prima risposta generica e concludono che non funziona per il proprio lavoro. In due serate capisci cosa mancava alla tua richiesta, non allo strumento.',
+      cta: 'Riprovo, ma bene →',
+      chat: null, // l'esempio di default è già questo angolo
+      aud: ['provato', 'prof', 'marketing', 'titolari', 'team', 'ammin']
+    },
+
+    '/dati-aziendali': {
+      title: 'Usare ChatGPT al lavoro senza rischi · Onda AI Academy',
+      desc: 'Offerte, contratti e dati dei clienti caricati su piani gratuiti. Due serate a Correggio per impostarlo bene e capire cosa non caricare mai.',
+      h1: 'Usi ChatGPT al lavoro<span class="dot">.</span><br>Impariamo a farlo senza rischi.',
+      lead: 'Offerte, contratti, dati dei clienti: la maggior parte delle piccole imprese li carica su un piano gratuito senza sapere cosa comporta. Due serate per impostarlo bene, capire cosa non caricare mai, e usarlo davvero sul lavoro.',
+      cta: 'Impostiamolo bene →',
+      chat: {
+        user: 'Ti carico il contratto del cliente, fammi un riassunto',
+        before: 'Il documento finisce su un piano gratuito, senza sapere dove resta né chi può leggerlo.',
+        after: 'Lo stesso riassunto, con le impostazioni giuste e i dati sensibili tolti prima di caricare.'
+      },
+      aud: ['team', 'titolari', 'ammin', 'prof', 'marketing', 'provato']
+    },
+
+    '/tempo': {
+      title: 'Recupera ore ogni settimana con ChatGPT · Onda AI Academy',
+      desc: 'Email, preventivi, report, post: se riparti sempre da zero stai lavorando il doppio. Due serate a Correggio per imparare il metodo.',
+      h1: 'Quante ore a settimana passi<br>a riscrivere le stesse cose<span class="dot">?</span>',
+      lead: 'Email, preventivi, report, post: se ogni volta riparti da zero stai lavorando il doppio del necessario. Due serate a Correggio per imparare il metodo, non i trucchetti.',
+      cta: 'Iscriviti →',
+      chat: null,
+      aud: null // ordine invariato: è la variante di controllo
+    }
+  };
+
+  (function applicaVariante() {
+    const path = location.pathname.replace(/\/+$/, '') || '/';
+    const v = VARIANTI[path];
+    if (!v) return;
+
+    const set = (id, html) => { const el = document.getElementById(id); if (el && html) el.innerHTML = html; };
+    const meta = (sel, val) => { const el = document.querySelector(sel); if (el && val) el.setAttribute('content', val); };
+
+    if (v.title) {
+      document.title = v.title;
+      meta('meta[property="og:title"]', v.title);
+    }
+    if (v.desc) {
+      meta('meta[name="description"]', v.desc);
+      meta('meta[property="og:description"]', v.desc);
+    }
+
+    set('heroTitle', v.h1);
+    set('heroLead', v.lead);
+    set('heroCta', v.cta);
+
+    if (v.chat) {
+      set('chatUser', v.chat.user);
+      set('chatBefore', v.chat.before);
+      set('chatAfter', v.chat.after);
+    }
+
+    if (v.aud) {
+      const lista = document.getElementById('audienceList');
+      if (lista) {
+        v.aud.forEach(function (key) {
+          const row = lista.querySelector('[data-aud="' + key + '"]');
+          if (row) lista.appendChild(row);
+        });
+      }
+    }
+
+    if (v.chiSonoInAlto) {
+      const chiSono = document.getElementById('secChiSono');
+      const perChi = document.getElementById('secPerChi');
+      if (chiSono && perChi) perChi.parentNode.insertBefore(chiSono, perChi);
+    }
+  })();
+
   // Incolla qui l'URL del tuo Google Apps Script Web App (vedi README.md)
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx5VM2U9P7LEMjCuuRhsqVW3zDjRBWQ7CXZjj94_13Od2S5GxGs_g2dv3ixeWRzdXBb/exec';
 
@@ -875,6 +997,7 @@ footer p { font-family: var(--f-mono); font-size: 11px; color: var(--gray); lett
       email: email,
       azienda: azienda,
       source: 'landing',
+      variante: (location.pathname.replace(/\/+$/, '') || '/'),
       page: location.pathname
     }).toString();
 
