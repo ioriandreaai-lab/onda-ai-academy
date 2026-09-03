@@ -2,7 +2,7 @@
 
 Landing page del corso "ChatGPT per tutti" — Onda AI Academy (Giulia Forghieri).
 
-Sito statico, un solo file `index.html` autocontenuto (immagini incluse come base64). Nessuna build necessaria: deploy diretto su Vercel come sito statico.
+Sito statico, nessuna build: deploy diretto su Vercel dal push su `main`. Il marchio della topbar è `logo.png`, un file a parte; le altre immagini restano incorporate in `index.html` come base64.
 
 ## Form di iscrizione
 
