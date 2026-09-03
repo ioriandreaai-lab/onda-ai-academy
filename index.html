@@ -177,6 +177,11 @@ a.hero-info-row:hover .location-row { background: var(--purple-bg); }
 }
 .problem-card h3 { font-size: 15.5px; margin-bottom: 8px; }
 .problem-card p { font-size: 14px; }
+.fit-list { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-top: 4px; }
+.fit-list li { font-size: 14.5px; padding-left: 24px; position: relative; line-height: 1.5; }
+.fit-list li::before { position: absolute; left: 0; top: 0; font-weight: 700; font-size: 14px; }
+.problem-card.negative .fit-list li::before { content: '\2715'; color: #dc2626; }
+.problem-card.positive .fit-list li::before { content: '\2713'; color: var(--purple); }
 .problem-card.negative { background: #fef2f2; border: 1px solid #fecaca; }
 .problem-card.negative .problem-card-badge { background: #fee2e2; color: #dc2626; }
 .problem-card.negative h3 { color: #b91c1c; }
@@ -671,6 +676,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="audience-row" data-aud="provato">
         <div class="audience-icon">🔰</div>
         <div><h3>Chi ha già provato e mollato</h3><p>Hai ricevuto una risposta generica e non l'hai più riaperto? Si riparte esattamente da lì.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIT: no se / sì se -->
+<section class="section off">
+  <div class="wrap">
+    <span class="tag">Prima di iscriverti</span>
+    <h2>Non è un corso per tutti.</h2>
+    <p class="intro">Venti posti soli, e ogni caso viene seguito da vicino. Preferiamo dirti subito se non fa per te, piuttosto che avertelo in aula.</p>
+    <div class="problem-grid">
+      <div class="problem-card negative">
+        <div class="problem-card-badge">✕</div>
+        <h3>Non fa per te se…</h3>
+        <ul class="fit-list">
+          <li>cerchi un corso teorico per capire «cos'è l'intelligenza artificiale»</li>
+          <li>vuoi diventare tecnico o imparare a programmare</li>
+          <li>cerchi la formula magica che lavora al posto tuo</li>
+        </ul>
+      </div>
+      <div class="problem-card positive">
+        <div class="problem-card-badge">✓</div>
+        <h3>Fa per te se…</h3>
+        <ul class="fit-list">
+          <li>passi le giornate su lavori ripetitivi e vuoi liberare spazio per la parte creativa</li>
+          <li>hai già provato ChatGPT e ti ha deluso</li>
+          <li>cerchi un metodo che resta, non una lista di prompt da copiare</li>
+        </ul>
       </div>
     </div>
   </div>
