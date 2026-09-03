@@ -116,6 +116,11 @@ a.btn.whatsapp:hover { background: #1ebe57; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
 .hero h1 { color: var(--ink); font-size: 44px; line-height: 1.15; margin-bottom: 20px; }
 .hero p.lead { color: var(--body); font-size: 18px; margin-bottom: 32px; }
+.hero-claim {
+  font-size: 16.5px; font-weight: 600; color: var(--purple2); line-height: 1.4;
+  margin: -8px 0 18px; padding-left: 14px; border-left: 3px solid var(--purple);
+}
+@media (max-width: 720px) { .hero-claim { font-size: 15.5px; } }
 
 .hero-info-list { display: flex; flex-direction: column; gap: 18px; margin-top: 36px; }
 a.hero-info-row { text-decoration: none; }
@@ -474,6 +479,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <span class="tag">Corso in presenza · Due serate</span>
         <h1 id="heroTitle">ChatGPT per tutti<span class="dot">.</span><br>Il corso in presenza a Correggio.</h1>
+        <p class="hero-claim">Da chi questi strumenti li usa tutti i giorni</p>
         <p class="lead" id="heroLead">Impara a usarlo per ottenere risultati veri e diventare più produttivo, eliminando le attività più ripetitive. Decine di casi reali, zero competenze tecniche richieste.</p>
         <div class="btn-row">
           <a class="btn" id="heroCta" href="#iscrizione">Iscriviti →</a>
