@@ -408,6 +408,36 @@ a.hero-info-row:hover .location-row { background: var(--purple-bg); }
 .location-map iframe { display: block; width: 100%; height: 100%; min-height: 280px; }
 @media (max-width: 720px) { .location-block { grid-template-columns: 1fr; } .location-map { min-height: 220px; } .location-map iframe { min-height: 220px; } }
 
+/* OBIEZIONI */
+.obj-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.obj-item { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 24px 26px; }
+.obj-q {
+  font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 10px;
+  padding-left: 16px; border-left: 3px solid var(--purple); line-height: 1.4;
+}
+.obj-item p { font-size: 14px; color: var(--body); line-height: 1.6; }
+@media (max-width: 720px) { .obj-list { grid-template-columns: 1fr; } }
+
+/* TABELLA TEMPI, solo variante /tempo */
+.tempi { display: none; }
+.tempi.on { display: block; }
+.tempi-table { background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px -34px rgba(26,19,48,.35); }
+.tempi-row { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 18px; padding: 16px 26px; border-top: 1px solid var(--border); }
+.tempi-row:first-child { border-top: none; }
+.tempi-row.head { background: var(--off); }
+.tempi-row.head span { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); }
+.tempi-doc { font-size: 15px; color: var(--ink); font-weight: 600; }
+.tempi-prima, .tempi-dopo { font-family: var(--f-mono); font-size: 15px; min-width: 74px; text-align: right; font-variant-numeric: tabular-nums; }
+.tempi-prima { color: var(--gray); text-decoration: line-through; }
+.tempi-dopo { color: var(--purple2); font-weight: 700; }
+.tempi-nota { font-size: 13px; color: var(--gray); margin-top: 16px; text-align: center; }
+@media (max-width: 560px) {
+  .tempi-row { grid-template-columns: 1fr auto; row-gap: 4px; padding: 14px 18px; }
+  .tempi-row.head { display: none; }
+  .tempi-prima { grid-column: 2; }
+  .tempi-dopo { grid-column: 2; }
+}
+
 /* FAQ */
 .faq-item { border-bottom: 1px solid var(--border); padding: 22px 0; }
 .faq-item h3 { font-size: 15px; margin-bottom: 8px; }
@@ -521,6 +551,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="stat-item"><strong>20</strong><span>Posti massimo</span></div>
       <div class="stat-item"><strong>3</strong><span>Bonus inclusi</span></div>
     </div>
+  </div>
+</section>
+
+<!-- TEMPI: visibile solo su /tempo -->
+<section class="section tempi" id="secTempi">
+  <div class="wrap">
+    <span class="tag">In concreto</span>
+    <h2>Gli stessi documenti, in un quinto del tempo.</h2>
+    <p class="intro">Non «recuperi tempo»: questi sono i lavori che rifai ogni settimana, con il tempo che ti prendono oggi e quello che ti prendono dopo averli impostati una volta.</p>
+    <div class="tempi-table">
+      <div class="tempi-row head"><span>Il documento</span><span>Oggi</span><span>Dopo</span></div>
+      <div class="tempi-row"><span class="tempi-doc">Preventivo per un cliente nuovo</span><span class="tempi-prima">2 h</span><span class="tempi-dopo">20 min</span></div>
+      <div class="tempi-row"><span class="tempi-doc">Report mensile</span><span class="tempi-prima">3 h</span><span class="tempi-dopo">40 min</span></div>
+      <div class="tempi-row"><span class="tempi-doc">Mail di sollecito a un insoluto</span><span class="tempi-prima">20 min</span><span class="tempi-dopo">3 min</span></div>
+      <div class="tempi-row"><span class="tempi-doc">Descrizione di un prodotto</span><span class="tempi-prima">45 min</span><span class="tempi-dopo">8 min</span></div>
+      <div class="tempi-row"><span class="tempi-doc">Post o newsletter</span><span class="tempi-prima">1 h</span><span class="tempi-dopo">12 min</span></div>
+    </div>
+    <p class="tempi-nota">Due ore a settimana recuperate, a 35€ l'ora di costo aziendale, fanno circa 300€ al mese.</p>
   </div>
 </section>
 
@@ -839,6 +887,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- OBIEZIONI -->
+<section class="section">
+  <div class="wrap">
+    <span class="tag">Parliamone</span>
+    <h2>Forse stai pensando una di queste cose.</h2>
+    <p class="intro">Sono quattro obiezioni legittime, e nessuna è una scusa. Meglio rispondere qui che lasciartele addosso fino alla telefonata.</p>
+    <div class="obj-list">
+      <div class="obj-item">
+        <div class="obj-q">«Lo imparo gratis su YouTube»</div>
+        <p>Puoi, ed è probabile che tu ci abbia già provato. La differenza è che qui si lavora su un caso tuo e c'è qualcuno che ti dice dove stai sbagliando. Un video non ti guarda lo schermo, e il punto in cui ci si blocca è sempre personale.</p>
+      </div>
+      <div class="obj-item">
+        <div class="obj-q">«L'AI cambia ogni mese, imparo cose che tra sei mesi non servono»</div>
+        <p>Vero per i bottoni, falso per il metodo. Quello che impari è come costruire una richiesta e come dare contesto: cambia il modello, non cambia il modo di chiedere. È anche la parte che quasi nessuno insegna, perché è meno spettacolare della funzione del momento.</p>
+      </div>
+      <div class="obj-item">
+        <div class="obj-q">«Non ho tempo»</div>
+        <p>Due mercoledì sera, dalle 20.30 alle 23. Cinque ore in tutto, nessuna giornata di lavoro persa e nessuna trasferta: siamo a Correggio, con parcheggio gratuito in loco.</p>
+      </div>
+      <div class="obj-item">
+        <div class="obj-q">«Non sono capace con la tecnologia»</div>
+        <p>Non si scrive una riga di codice e non si dà niente per scontato. Si parte da come si formula una richiesta, e il corso è pensato per chi non ha mai usato ChatGPT quanto per chi l'ha aperto e ha mollato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="section off">
   <div class="wrap">
@@ -937,9 +1012,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     '/titolari': {
       title: 'ChatGPT per titolari e artigiani · Onda AI Academy',
-      desc: 'Il preventivo che ti prende due ore, fatto in sei minuti. Due serate a Correggio, il 14 e 21 ottobre, sul caso vero della tua azienda.',
-      h1: 'Il preventivo che ti prende due ore<span class="dot">.</span><br>Facciamolo in sei minuti.',
-      lead: 'Due serate a Correggio per far scrivere a ChatGPT le offerte, le mail ai clienti e i documenti che oggi rifai ogni volta da capo. Sul tuo caso vero, non su esempi finti. Zero competenze tecniche.',
+      desc: 'Il preventivo che ti prende due ore, fatto in venti minuti. Due serate a Correggio, il 14 e 21 ottobre, sul caso vero della tua azienda.',
+      h1: 'Il preventivo che ti prende due ore<span class="dot">.</span><br>Facciamolo in venti minuti.',
+      lead: 'Offerte, schede prodotto, risposte alle richieste, mail ai clienti: i documenti che escono dalla tua azienda li scrivi ancora da capo ogni volta. Due serate a Correggio, sul tuo caso vero. Zero competenze tecniche.',
       cta: 'Voglio il posto →',
       chat: {
         user: 'Scrivimi il preventivo per la fornitura al cliente Rossi',
@@ -991,11 +1066,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     '/tempo': {
       title: 'Recupera ore ogni settimana con ChatGPT · Onda AI Academy',
       desc: 'Email, preventivi, report, post: se riparti sempre da zero stai lavorando il doppio. Due serate a Correggio per imparare il metodo.',
-      h1: 'Quante ore a settimana passi<br>a riscrivere le stesse cose<span class="dot">?</span>',
-      lead: 'Email, preventivi, report, post: se ogni volta riparti da zero stai lavorando il doppio del necessario. Due serate a Correggio per imparare il metodo, non i trucchetti.',
+      h1: 'Ti pagano per decidere<span class="dot">.</span><br>Passi la giornata a riscrivere.',
+      lead: 'Il preventivo che rifai da capo, il report del lunedì, la mail riscritta per la terza volta. Due serate a Correggio per toglierti di dosso la parte meccanica e rimettere quelle ore dove serve la tua testa.',
       cta: 'Iscriviti →',
       chat: null,
-      aud: null // ordine invariato: è la variante di controllo
+      aud: null, // ordine invariato: è la variante di controllo
+      tabellaTempi: true
     }
   };
 
@@ -1034,6 +1110,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if (row) lista.appendChild(row);
         });
       }
+    }
+
+    if (v.tabellaTempi) {
+      const t = document.getElementById('secTempi');
+      if (t) t.classList.add('on');
     }
 
     if (v.chiSonoInAlto) {
