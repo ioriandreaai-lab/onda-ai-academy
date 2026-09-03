@@ -13,7 +13,9 @@ function doPost(e) {
     data.azienda || '',
     data.variante || '',
     data.source || '',
-    data.page || ''
+    data.page || '',
+    data.consensoPrivacy || '',
+    data.consensoMarketing || ''
   ]);
 
   var destinatario = 'forghieri.giulia@gmail.com';
@@ -24,6 +26,7 @@ function doPost(e) {
     'Email: ' + (data.email || '-') + '\n' +
     'Azienda: ' + (data.azienda || '-') + '\n' +
     'Arrivato da: ' + (data.variante || '-') + '\n' +
+    'Consenso marketing: ' + (data.consensoMarketing || '-') + '\n' +
     'Data: ' + new Date().toLocaleString('it-IT') + '\n\n' +
     'Richiama entro 24h per confermare il posto.';
 

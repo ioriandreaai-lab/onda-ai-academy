@@ -1012,6 +1012,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const telefono = document.getElementById('telefonoInput').value;
     const email = document.getElementById('emailInput').value;
     const azienda = document.getElementById('aziendaInput').value;
+    const consensoPrivacy = document.getElementById('consensoPrivacy').checked;
+    const consensoMarketing = document.getElementById('consensoMarketing').checked;
 
     if (GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') === 0) {
       console.warn('GOOGLE_SCRIPT_URL non configurato — vedi README.md. Il form continua verso FormSubmit.');
@@ -1029,7 +1031,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       azienda: azienda,
       source: utmMedium ? (utmSource + '/' + utmMedium) : utmSource,
       variante: (location.pathname.replace(/\/+$/, '') || '/'),
-      page: location.pathname
+      page: location.pathname,
+      consensoPrivacy: consensoPrivacy ? 'sì' : 'no',
+      consensoMarketing: consensoMarketing ? 'sì' : 'no'
     }).toString();
 
     window.dataLayer = window.dataLayer || [];
